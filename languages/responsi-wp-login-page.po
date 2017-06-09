@@ -1,0 +1,225 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsi WP Login Page\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-23 10:24+0700\n"
+"PO-Revision-Date: 2016-01-23 10:24+0700\n"
+"Last-Translator: Nguyen Cong Tuan <mr.nguyencongtuan@gmail.com>\n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/responsi-wp-login-page-admin.php:58
+msgid "WP Login Page Customize Menu"
+msgstr ""
+
+#: customize/customize.php:72
+msgid "WP Login Page"
+msgstr ""
+
+#: customize/customize.php:89 customize/customize.php:101
+msgid "Preview Login Page"
+msgstr ""
+
+#: customize/customize.php:102
+msgid "Turn ON preview Login page and see change style settings."
+msgstr ""
+
+#: customize/customize.php:115 customize/customize.php:125
+msgid "WordPress login logo"
+msgstr ""
+
+#: customize/customize.php:126
+msgid "Change the logo image for the WordPress login page."
+msgstr ""
+
+#: customize/customize.php:126
+msgid "Optimal logo size is 274x63px"
+msgstr ""
+
+#: customize/customize.php:138
+msgid "WordPress login URL"
+msgstr ""
+
+#: customize/customize.php:139
+msgid ""
+"Change the URL that the logo image on the WordPress login page links to."
+msgstr ""
+
+#: customize/customize.php:151
+msgid "WordPress login logo Title"
+msgstr ""
+
+#: customize/customize.php:152
+msgid "Change the title of the logo image on the WordPress login page."
+msgstr ""
+
+#: customize/customize.php:164
+msgid "Page Background Style"
+msgstr ""
+
+#: customize/customize.php:174
+msgid "Background Colour"
+msgstr ""
+
+#: customize/customize.php:188
+msgid "Background Image"
+msgstr ""
+
+#: customize/customize.php:203
+msgid "Image"
+msgstr ""
+
+#: customize/customize.php:218
+msgid "Image Resizer"
+msgstr ""
+
+#: customize/customize.php:235
+msgid "Image Size"
+msgstr ""
+
+#: customize/customize.php:236
+msgid ""
+"Tip! Use Square large background image with settings 100% width and auto "
+"height for best display in all browsers."
+msgstr ""
+
+#: customize/customize.php:259
+msgid "Image Attachment"
+msgstr ""
+
+#: customize/customize.php:281
+msgid "Image Alignment"
+msgstr ""
+
+#: customize/customize.php:282
+msgid ""
+"Supports absolute values left, right, center, top, bottom or pixel values e."
+"g. 20px for inner container positioning of image"
+msgstr ""
+
+#: customize/customize.php:303
+msgid "Image Repeat"
+msgstr ""
+
+#: customize/customize.php:329
+msgid "Container Background & Border "
+msgstr ""
+
+#: customize/customize.php:339
+msgid "Background Color"
+msgstr ""
+
+#: customize/customize.php:352
+msgid "Border"
+msgstr ""
+
+#: customize/customize.php:365
+msgid "Border Corner"
+msgstr ""
+
+#: customize/customize.php:378 customize/customize.php:653
+msgid "Border Shadow"
+msgstr ""
+
+#: customize/customize.php:391 customize/customize.php:666
+msgid "Padding"
+msgstr ""
+
+#: customize/customize.php:416
+msgid "Fonts"
+msgstr ""
+
+#: customize/customize.php:427 customize/customize.php:478
+msgid "Font"
+msgstr ""
+
+#: customize/customize.php:441
+msgid "Text link Colour"
+msgstr ""
+
+#: customize/customize.php:454
+msgid "Link Colour on Mouse Over"
+msgstr ""
+
+#: customize/customize.php:468
+msgid "Button Style"
+msgstr ""
+
+#: customize/customize.php:491
+msgid "Transform"
+msgstr ""
+
+#: customize/customize.php:510
+msgid "Base Background Colour"
+msgstr ""
+
+#: customize/customize.php:523
+msgid "Gradient from"
+msgstr ""
+
+#: customize/customize.php:536
+msgid "Gradient to"
+msgstr ""
+
+#: customize/customize.php:549
+msgid "Border - Top"
+msgstr ""
+
+#: customize/customize.php:562
+msgid "Border - Bottom"
+msgstr ""
+
+#: customize/customize.php:575
+msgid "Border - Left"
+msgstr ""
+
+#: customize/customize.php:588
+msgid "Border - Right"
+msgstr ""
+
+#: customize/customize.php:601
+msgid "Border Corner - Top Left"
+msgstr ""
+
+#: customize/customize.php:614
+msgid "Border Corner - Top Right"
+msgstr ""
+
+#: customize/customize.php:627
+msgid "Border Corner - Bottom Left"
+msgstr ""
+
+#: customize/customize.php:640
+msgid "Border Corner - Bottom Right"
+msgstr ""
+
+#: responsi-wp-login-page.php:39
+#, php-format
+msgid ""
+"This is a plugin for Responsi Framework, you need to install <a href=\"%s\" "
+"target=\"_blank\">Responsi Framework</a> theme from WordPress first before "
+"can activate this."
+msgstr ""
+
+#: responsi-wp-login-page.php:43
+#, php-format
+msgid ""
+"This is a plugin for Responsi Framework from version 5.4.0 or higher, you "
+"need to upgrade to latest version of <a href=\"%s\" target=\"_blank"
+"\">Responsi Framework</a>."
+msgstr ""
+
+#: upgrade/plugin_upgrade.php:40
+msgid "Error: "
+msgstr ""

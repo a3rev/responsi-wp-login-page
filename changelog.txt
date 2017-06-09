@@ -1,0 +1,79 @@
+*** Responsi WP Login Page ***
+
+= 1.2.2 - 2017/04/22 =
+* Tweak - Tested for full compatibility with WordPress 4.7.4
+* Tweak - Tested for full compatibility with WooCommerce 3.0.4
+* Fix - Remove get_users on filter-responsi-template-developer to remove duplicate queries when developer plugin admin menu is opened in browser
+
+= 1.2.1 - 2016/11/22 =
+* Tweak - Compile less mincss to inline style compatibility with Responsi Framework version 6.5.9.4 
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.9.4
+* Tweak - Tested for full compatibility with WordPress major version 4.7.0
+
+= 1.2.0 - 2016/10/26 =
+* Tweak - Update template and functions for compatibility with Responsi Framework version 6.5.7
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.7
+* Tweak - Jump version to 1.2 as we where at 1.1.9
+
+= 1.1.9 - 2016/10/11 =
+* Tweak – Change customize options from theme_mod type to option type
+* Tweak - Change all ID Class prefixing in structure html from a3rev- to responsi- 
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.6
+* Tweak - Tested for full compatibility with WordPress version 4.6.1 with this version
+* Tweak - Tested for full compatibility with PHP 7.0 with this version
+
+= 1.1.8 - 2016/09/15 =
+* Tweak - Change custom options to theme_mods function of Responsi Framework version 6.5.5
+* Tweak - Change function general dynamic style from SASS and LESS less compiler to use minify CSS function released in Responis Framework version 6.5.5
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.5
+* Tweak - Tested for full compatibility with WordPress version 4.6.1
+* Tweak - Tested for full compatibility with PHP 7.0
+
+= 1.1.7 - 2016/08/24 =
+* Tweak - Major code review and rewrite to improve Customizer menu and site preview load times
+* Tweak - Review and rewrite all Customizer Preview JavaScripts to make them smaller for faster load in customizer
+* Tweak - Review and tidy up customizer HTML. Removed unnecessary white space and some style inline in control for faster load
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.3
+* Tweak - tested for full compatibility with WordPress version 4.6.0
+
+= 1.1.6 - 2016/08/16 =
+* Tweak - Full compatibility with Responsi Developer version 1.5.0 new features
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.1
+* Tweak - Tested for full compatibility with upcoming Major WordPress version 4.6
+
+= 1.1.5 - 2016/07/28 = 
+*Tweak - Added font editor for register form
+*Fix - Login page background colour in customizer preview 
+*Fix - link color and hover color in customizer preview
+
+= 1.1.4 - 2016/06/15 =
+* Tweak - Tested for full compatibility with Responsi Framework version 6.3.7
+* Tweak - Tested for full compatibility with upcoming WordPress version 4.5.3
+* Fix - Customize js not applying background-color when switch background control 
+
+= 1.1.3 - 2016/04/29 =
+* Tweak - Tested for full compatibility with Responsi Framework version 6.3.1
+* Tweak - Tested for full compatibility with WordPress version 4.5.1
+* Tweak - Remove function to check for Responsi Framework version 5.3.0 or greater
+
+= 1.1.2 - 2016/04/19 =
+* Tweak - Tested for full compatibility with Responsi Framework version 6.1.0
+* Fix - Fixed conflict style css login form in Wordpress 4.5
+
+= 1.1.1 - 2016/03/03 =
+* Tweak - Resort the plugins options on customizer menu
+* Tweak - Added Login Button Font Shadow option with ON | OFF switch
+* Tweak - Edited the menu text for consistency with Responsi Framework menus
+* Tweak - Tested for full compatibility with Responsi Framework version 5.6.1
+
+= 1.1.0 - 2016/02/03 =
+* Feature - Add full support for font line height to all font editors. Set line height as em
+* Tweak - Remove fixed px font editor line height
+* Tweak - Add addon_save_options() function to support child theme overrides default options.
+* Tweak - Tested for full compatibility with Responsi Framework version 5.5.0
+* Tweak - Tested for full compatibility with WordPress version 4.4.2
+
+= 1.0.0 - 2016/01/22 =
+* Initial Release - Commit Plugins source code to a3rev Github repository.
+* Initial Release - Configure to work with Responsi Add-on Plugins Free plugin menu
+* Initial Release - Commit Plugin to Amazon Cloud storage for download.
