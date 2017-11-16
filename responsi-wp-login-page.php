@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsi WP Login Page
 Description: Dont want your client / customers seeing the WordPress logo and links when they login to your site? Responsi WP Login Page allows you to customize the login page to match your sites design and remove all reference to WordPress.
-Version: 1.2.2
+Version: 1.2.3
 Author: a3THEMES
 Author URI: http://a3rev.com/
 Text Domain: responsi-wp-login-page
@@ -39,7 +39,7 @@ function responsi_wp_login_page_activate_validate() {
         echo sprintf( __( 'This is a plugin for Responsi Framework, you need to install <a href="%s" target="_blank">Responsi Framework</a> theme from WordPress first before can activate this.', 'responsi-wp-login-page' ), 'https://wordpress.org/themes/responsi-framework/' );
         die();
     }
-    update_option('a3rev_responsi_wp_login_page_version', '1.2.2');
+    update_option('a3rev_responsi_wp_login_page_version', '1.2.3');
     update_option('responsi_wp_login_page_installed', true);
 }
 
@@ -52,14 +52,14 @@ if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset(
 add_action( 'after_setup_theme', 'responsi_addon_wp_login_page_upgrade_version' );
 function responsi_addon_wp_login_page_upgrade_version() {
 
-	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.2.2') === -1 ) {
+	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.2.3') === -1 ) {
 		global $responsi_wp_login_page;
 		//$theme = get_option( 'stylesheet' );
-        //$version = str_replace('.', '_', '1.2.2');
+        //$version = str_replace('.', '_', '1.2.3');
         //update_option( 'theme_mods_'.$theme.'_wp_login_page_'.$version, $responsi_wp_login_page->global_responsi_options_wp_login_page() );
         $responsi_wp_login_page->build_css_after_addon_updated();
 	}
-	update_option('a3rev_responsi_wp_login_page_version', '1.2.2');
+	update_option('a3rev_responsi_wp_login_page_version', '1.2.3');
 }
 
 include ( 'upgrade/plugin_upgrade.php' );

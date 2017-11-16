@@ -24,6 +24,9 @@ class Responsi_WP_Login_Page {
 		if( isset($_POST['customized']) ){
 			$post_value = json_decode( wp_unslash( $_POST['customized'] ), true );
 			$post_value = apply_filters( 'responsi_customized_post_value', $post_value );
+		}else{
+			$post_value = $settings->changeset_data();
+			$post_value = apply_filters( 'responsi_customized_changeset_data_value', $post_value );
 		}
 
 		if( is_array( $responsi_options_wp_login_page ) && count( $responsi_options_wp_login_page ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){

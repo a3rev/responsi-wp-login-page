@@ -1,11 +1,14 @@
 (function($) {
     customizeLoginPageLogic = {};
-    $(document).ready(function() {
-        $('li#accordion-section-login_sections').on('collapsed', function() {
-            $('.iPhoneCheckContainer #responsi_custom_login_preview_active').removeAttr('checked').iphoneStyle("refresh");
+    $( window ).on( 'load', function() {
+
+        $('li#accordion-section-login_sections').on( 'collapsed', function(){
+            $('#responsi_custom_login_preview_active').val('false').trigger("change");
         });
-        $('li#accordion-section-login_sections').on('expanded', function() {
-            $('.iPhoneCheckContainer #responsi_custom_login_preview_active').prop('checked', true).iphoneStyle("refresh");
+
+        $('li#accordion-section-login_sections').on( 'expanded', function(){
+            $('#responsi_custom_login_preview_active').val('true').trigger("change");
         });
+
     });
 }(jQuery));

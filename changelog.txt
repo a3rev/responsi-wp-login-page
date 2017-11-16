@@ -1,5 +1,10 @@
 *** Responsi WP Login Page ***
 
+= 1.2.3 - 2017/11/16 =
+* Maintenance Upgrade. Please upgrade to WordPress 4.9.0 – then Responsi Framework to 6.8.0 and then this plugin
+* Tweak - Tested for compatibility with WordPress Major version 4.9
+* Tweak - Updated for full compatibility with Responsi Framework new feature version 6.8.0
+
 = 1.2.2 - 2017/04/22 =
 * Tweak - Tested for full compatibility with WordPress 4.7.4
 * Tweak - Tested for full compatibility with WooCommerce 3.0.4
