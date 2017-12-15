@@ -1,5 +1,13 @@
 *** Responsi WP Login Page ***
 
+= 1.2.4 - 2017/12/15 =
+* Major maintenance update. Completely rewrite of the customizer controls in Customizer JS API for Compatibility with Responsi v 6.8.2. Don’t upgrade this plugin before you upgrade the framework.
+* Tweak - Refactor of customize controls from using PHP API to use Customizer JS API WP 4.9
+* Tweak - Elimination of Repeated ID in controls
+* Tweak - Major cleanup of framework HTML on customizer controls to speed up customizer load time
+* Tweak - Tested for compatibility with WordPress 4.9.1
+* Tweak - Tested for compatibility with Responsi Framework 6.8.2
+
 = 1.2.3 - 2017/11/16 =
 * Maintenance Upgrade. Please upgrade to WordPress 4.9.0 – then Responsi Framework to 6.8.0 and then this plugin
 * Tweak - Tested for compatibility with WordPress Major version 4.9

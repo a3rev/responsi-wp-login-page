@@ -43,7 +43,7 @@ class WP_Login_Page_Responsi_Customize
         wp_enqueue_script('customize-wploginpage-preview', RESPONSI_WPLOGIN_URL . '/customize/js/customize' . $suffix . '.js', array(
             'jquery',
             'customize-preview',
-            'responsi-customize-function-preview'
+            'responsi-customize-function'
         ), '5.3.0', 1);
 
     }
@@ -82,12 +82,10 @@ class WP_Login_Page_Responsi_Customize
 
         $_controls_settings = array();
 
-        $_controls_settings['login_label0'] = array(
+        $_controls_settings['lbwplogin1'] = array(
             'control' => array(
                 'label'      => __('Preview Login Page', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
-                'settings'    => 'login_label0',
                 'type'       => 'ilabel',
                 'input_attrs' => array( 'class' => 'hide')
             ),
@@ -108,12 +106,10 @@ class WP_Login_Page_Responsi_Customize
             )
         );
 
-        $_controls_settings['responsi_login_container_label1'] = array(
+        $_controls_settings['lbwplogin2'] = array(
             'control' => array(
                 'label'      => __('Login Form Container', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
-                'settings'    => 'responsi_login_container_label1',
                 'type'       => 'ilabel'
             ),
             'setting' => array()
@@ -121,7 +117,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_container_bg'] = array(
             'control' => array(
                 'label'      => __('Background Color', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'ibackground'
@@ -134,7 +129,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_container_border'] = array(
             'control' => array(
                 'label' => __('Border', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border'
@@ -147,7 +141,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_container_border_radius'] = array(
             'control' => array(
                 'label'      => __('Border Corner', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border_radius'
@@ -160,7 +153,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_container_box_shadow'] = array(
             'control' => array(
                 'label'      => __('Border Shadow', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'box_shadow'
@@ -173,7 +165,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_container_padding'] = array(
             'control' => array(
                 'label'      => __('Padding', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multitext',
                 'type'       => 'multitext',
@@ -195,12 +186,10 @@ class WP_Login_Page_Responsi_Customize
             )
         );
 
-        $_controls_settings['login_label1'] = array(
+        $_controls_settings['lbwplogin3'] = array(
             'control' => array(
                 'label'      => __('Login Form Logo', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
-                'settings'    => 'login_label1',
                 'type'       => 'ilabel'
             ),
             'setting' => array()
@@ -208,7 +197,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_custom_login_logo'] = array(
             'control' => array(
                 'label'      => __('Login Form Logo', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_custom_login_logo',
                 'type'       => 'iupload'
@@ -221,7 +209,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_custom_login_logo_url'] = array(
             'control' => array(
                 'label'      => __( 'Logo Link URL', 'responsi-wp-login-page' ),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_custom_login_logo_url',
                 'type'       => 'itext'
@@ -234,7 +221,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_custom_login_logo_title'] = array(
             'control' => array(
                 'label'      => __('Logo Hover Message', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_custom_login_logo_title',
                 'type'       => 'itext'
@@ -245,12 +231,10 @@ class WP_Login_Page_Responsi_Customize
             )
         );
 
-        $_controls_settings['responsi_login_container_label2'] = array(
+        $_controls_settings['lbwplogin4'] = array(
             'control' => array(
                 'label'      => __('Login Form Font', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
-                'settings'    => 'responsi_login_container_label2',
                 'type'       => 'ilabel'
             ),
             'setting' => array()
@@ -259,7 +243,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_container_font'] = array(
             'control' => array(
                 'label' => __('Font', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'typography'
@@ -273,7 +256,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_link_color'] = array(
             'control' => array(
                 'label'      => __('Text link Colour', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_link_color',
                 'type'       => 'icolor'
@@ -286,7 +268,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_link_hover_color'] = array(
             'control' => array(
                 'label'      => __('Link Colour on Mouse Over', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_link_hover_color',
                 'type'       => 'icolor'
@@ -297,12 +278,10 @@ class WP_Login_Page_Responsi_Customize
             )
         );
 
-        $_controls_settings['responsi_login_container_label4'] = array(
+        $_controls_settings['lbwplogin5'] = array(
             'control' => array(
                 'label'      => __('Login Button', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
-                'settings'    => 'responsi_login_container_label4',
                 'type'       => 'ilabel'
             ),
             'setting' => array()
@@ -310,7 +289,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_text'] = array(
             'control' => array(
                 'label' => __('Font', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'typography'
@@ -323,7 +301,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_text_shadow'] = array(
             'control' => array(
                 'label'      => __('Font Shadow', 'responsi'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_button_text_shadow',
                 'type'       => 'icheckbox',
@@ -336,7 +313,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_text_transform'] = array(
             'control' => array(
                 'label'      => __('Transform', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_button_text_transform',
                 'type'       => 'iradio',
@@ -355,7 +331,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_color'] = array(
             'control' => array(
                 'label'      => __('Base Background Colour', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_button_color',
                 'type'       => 'icolor'
@@ -368,7 +343,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_gradient_from'] = array(
             'control' => array(
                 'label'      => __('Gradient from', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_button_gradient_from',
                 'type'       => 'icolor'
@@ -381,7 +355,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_gradient_to'] = array(
             'control' => array(
                 'label'      => __('Gradient to', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_button_gradient_to',
                 'type'       => 'icolor'
@@ -394,7 +367,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_top'] = array(
             'control' => array(
                 'label' => __('Border - Top', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border'
@@ -407,7 +379,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_bottom'] = array(
             'control' => array(
                 'label' => __('Border - Bottom', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border'
@@ -420,7 +391,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_left'] = array(
             'control' => array(
                 'label' => __('Border - Left', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border'
@@ -433,7 +403,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_right'] = array(
             'control' => array(
                 'label' => __('Border - Right', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border'
@@ -446,7 +415,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_radius_tl'] = array(
             'control' => array(
                 'label'      => __('Border Corner - Top Left', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border_radius'
@@ -459,7 +427,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_radius_tr'] = array(
             'control' => array(
                 'label'      => __('Border Corner - Top Right', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border_radius'
@@ -472,7 +439,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_radius_bl'] = array(
             'control' => array(
                 'label'      => __('Border Corner - Bottom Left', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border_radius'
@@ -485,7 +451,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_radius_br'] = array(
             'control' => array(
                 'label'      => __('Border Corner - Bottom Right', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'border_radius'
@@ -498,7 +463,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_border_box_shadow'] = array(
             'control' => array(
                 'label'      => __('Border Shadow', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'box_shadow'
@@ -511,7 +475,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_button_padding'] = array(
             'control' => array(
                 'label'      => __('Padding', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multitext',
                 'type'       => 'multitext',
@@ -533,12 +496,10 @@ class WP_Login_Page_Responsi_Customize
             )
         );
 
-        $_controls_settings['login_label2'] = array(
+        $_controls_settings['lbwplogin6'] = array(
             'control' => array(
                 'label'      => __('Login Page Background', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
-                'settings'    => 'login_label2',
                 'type'       => 'ilabel'
             ),
             'setting' => array()
@@ -546,7 +507,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_bg'] = array(
             'control' => array(
                 'label'      => __('Background Colour', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
                 'type'       => 'ibackground'
@@ -560,7 +520,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_bg_image_enable'] = array(
             'control' => array(
                 'label'      => __('Background Image', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'    => 'responsi_login_page_bg_image_enable',
                 'type'       => 'icheckbox',
@@ -575,7 +534,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_bg_image'] = array(
             'control' => array(
                 'label'      => __('Image', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_page_bg_image',
                 'type'       => 'iupload',
@@ -590,7 +548,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_use_login_page_bg_size'] = array(
             'control' => array(
                 'label'      => __('Image Resizer', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_use_login_page_bg_size',
                 'type'       => 'icheckbox',
@@ -631,7 +588,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_bg_image_attachment'] = array(
             'control' => array(
                 'label'      => __('Image Attachment', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_page_bg_image_attachment',
                 'type'       => 'iswitcher',
@@ -675,7 +631,6 @@ class WP_Login_Page_Responsi_Customize
         $_controls_settings['responsi_login_page_bg_image_repeat'] = array(
             'control' => array(
                 'label'      => __('Image Repeat', 'responsi-wp-login-page'),
-                'description' => "",
                 'section'    => 'login_sections',
                 'settings'   => 'responsi_login_page_bg_image_repeat',
                 'type'       => 'iradio',
