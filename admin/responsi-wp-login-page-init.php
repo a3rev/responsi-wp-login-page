@@ -30,8 +30,6 @@ function load_plugin_textdomain_responsi_wp_login_page() {
 	if ( get_option('responsi_wp_login_page_installed') ) {
 		delete_option('responsi_wp_login_page_installed');
 		responsi_wp_login_page_install();
-		//wp_redirect( ( ( is_ssl() || force_ssl_admin() ) ? str_replace( 'http:', 'https:', admin_url( 'customize.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'customize.php' ) ) ) );
-		//exit;
 	}
 	wp_login_page_addon_load_plugin_textdomain();
 }
