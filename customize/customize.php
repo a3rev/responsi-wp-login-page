@@ -102,6 +102,7 @@ class WP_Login_Page_Responsi_Customize
                 'input_attrs' => array( 'class' => 'hide')
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default'       => isset($responsi_options_wp_login_page['responsi_custom_login_preview_active']) ? $responsi_options_wp_login_page['responsi_custom_login_preview_active'] : 'false',
             )
         );
@@ -122,6 +123,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'ibackground'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_bg']) ? $responsi_options_wp_login_page['responsi_login_page_container_bg'] : array( 'onoff' => 'true', 'color' => '#ffffff'),
                 'transport' => 'postMessage'
             )
@@ -134,6 +136,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_border']) ? $responsi_options_wp_login_page['responsi_login_page_container_border'] : array('width' => '1','style' => 'solid','color' => '#d2d2d2'),
                 'transport' => 'postMessage'
             )
@@ -146,6 +149,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border_radius'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_border_radius']) ? $responsi_options_wp_login_page['responsi_login_page_container_border_radius'] : array('corner' => 'rounded','rounded_value' => '6'),
                 'transport' => 'postMessage'
             )
@@ -158,6 +162,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'box_shadow'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_box_shadow',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_box_shadow']) ? $responsi_options_wp_login_page['responsi_login_page_container_box_shadow'] : array( 'onoff' => 'true' , 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '3px' , 'spread' => '0px', 'color' => '#d2d2d2', 'inset' => '' ),
                 'transport' => 'postMessage'
             )
@@ -176,6 +181,7 @@ class WP_Login_Page_Responsi_Customize
                 )
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default'       => array( 
                     isset($responsi_options_wp_login_page['responsi_login_page_container_padding_top']) ? $responsi_options_wp_login_page['responsi_login_page_container_padding_top'] : '40' , 
                     isset($responsi_options_wp_login_page['responsi_login_page_container_padding_bottom']) ? $responsi_options_wp_login_page['responsi_login_page_container_padding_bottom'] : '40',
@@ -202,6 +208,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'iupload'
             ),
             'setting' => array(
+                'sanitize_callback' => 'esc_url',
                 'default'       => isset($responsi_options_wp_login_page['responsi_custom_login_logo']) ? $responsi_options_wp_login_page['responsi_custom_login_logo'] : '',
                 'transport' => 'postMessage'
             )
@@ -214,6 +221,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'itext'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_text_field',
                 'default'       => isset($responsi_options_wp_login_page['responsi_custom_login_logo_url']) ? $responsi_options_wp_login_page['responsi_custom_login_logo_url'] : 'https://wordpress.org/',
                 'transport' => 'postMessage'
             )
@@ -226,6 +234,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'itext'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_text_field',
                 'default'       => isset($responsi_options_wp_login_page['responsi_custom_login_logo_title']) ? $responsi_options_wp_login_page['responsi_custom_login_logo_title'] : 'Powered by WordPress',
                 'transport' => 'postMessage'
             )
@@ -248,6 +257,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'typography'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_font']) ? $responsi_options_wp_login_page['responsi_login_page_container_font'] : array('size' => '14','line_height' => '1.5','face' => 'Open Sans','style' => 'normal','color' => '#777777'),
                 'transport' => 'postMessage'
             )
@@ -261,6 +271,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'icolor'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_link_color']) ? $responsi_options_wp_login_page['responsi_login_link_color'] : '#999999',
                 'transport' => 'postMessage'
             )
@@ -273,6 +284,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'icolor'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_link_hover_color']) ? $responsi_options_wp_login_page['responsi_login_link_hover_color'] : '#0073aa',
                 'transport' => 'postMessage'
             )
@@ -294,6 +306,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'typography'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_text']) ? $responsi_options_wp_login_page['responsi_login_button_text'] : array('size' => '13','line_height' => '1','face' => 'Open Sans','style' => 'normal','color' => '#FFFFFF'),
                 'transport' => 'postMessage'
             )
@@ -306,6 +319,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'icheckbox',
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default'       => isset($responsi_options['responsi_login_button_text_shadow']) ? $responsi_options['responsi_login_button_text_shadow'] : 'false',
                 'transport' => 'postMessage'
             )
@@ -324,6 +338,7 @@ class WP_Login_Page_Responsi_Customize
                 'choices' => array( "none" => "None","uppercase" => "Uppercase", "lowercase" => "Lowercase")
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_choices',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_text_transform']) ? $responsi_options_wp_login_page['responsi_login_button_text_transform'] : 'none',
                 'transport' => 'postMessage'
             )
@@ -336,6 +351,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'icolor'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_color']) ? $responsi_options_wp_login_page['responsi_login_button_color'] : '#0085ba',
                 'transport' => 'postMessage'
             )
@@ -348,6 +364,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'icolor'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_gradient_from']) ? $responsi_options_wp_login_page['responsi_login_button_gradient_from'] : '#0085ba',
                 'transport' => 'postMessage'
             )
@@ -360,6 +377,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'icolor'
             ),
             'setting' => array(
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_gradient_to']) ? $responsi_options_wp_login_page['responsi_login_button_gradient_to'] : '#0085ba',
                 'transport' => 'postMessage'
             )
@@ -372,6 +390,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_top']) ? $responsi_options_wp_login_page['responsi_login_button_border_top'] : array('width' => '1','style' => 'solid','color' => '#0073aa'),
                 'transport' => 'postMessage'
             )
@@ -384,6 +403,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_bottom']) ? $responsi_options_wp_login_page['responsi_login_button_border_bottom'] : array('width' => '1','style' => 'solid','color' => '#006799'),
                 'transport' => 'postMessage'
             )
@@ -396,6 +416,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_left']) ? $responsi_options_wp_login_page['responsi_login_button_border_left'] : array('width' => '1','style' => 'solid','color' => '#006799'),
                 'transport' => 'postMessage'
             )
@@ -408,6 +429,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_right']) ? $responsi_options_wp_login_page['responsi_login_button_border_right'] : array('width' => '1','style' => 'solid','color' => '#006799'),
                 'transport' => 'postMessage'
             )
@@ -420,6 +442,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border_radius'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_radius_tl']) ? $responsi_options_wp_login_page['responsi_login_button_border_radius_tl'] : array( 'corner' => 'rounded' , 'rounded_value' => 3 ),
                 'transport' => 'postMessage'
             )
@@ -432,6 +455,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border_radius'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_radius_tr']) ? $responsi_options_wp_login_page['responsi_login_button_border_radius_tr'] : array( 'corner' => 'rounded' , 'rounded_value' => 3 ),
                 'transport' => 'postMessage'
             )
@@ -444,6 +468,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border_radius'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_radius_bl']) ? $responsi_options_wp_login_page['responsi_login_button_border_radius_bl'] : array( 'corner' => 'rounded' , 'rounded_value' => 3 ),
                 'transport' => 'postMessage'
             )
@@ -456,6 +481,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'border_radius'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_radius_br']) ? $responsi_options_wp_login_page['responsi_login_button_border_radius_br'] : array( 'corner' => 'rounded' , 'rounded_value' => 3 ),
                 'transport' => 'postMessage'
             )
@@ -468,6 +494,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'box_shadow'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_box_shadow',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_button_border_box_shadow']) ? $responsi_options_wp_login_page['responsi_login_button_border_box_shadow'] : array( 'onoff' => 'false' , 'h_shadow' => '0px' , 'v_shadow' => '1px', 'blur' => '0px' , 'spread' => '0px', 'color' => '#006799', 'inset' => '' ),
                 'transport' => 'postMessage'
             )
@@ -486,6 +513,7 @@ class WP_Login_Page_Responsi_Customize
                 )
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default'       => array(
                     isset($responsi_options_wp_login_page['responsi_login_button_padding_top']) ? $responsi_options_wp_login_page['responsi_login_button_padding_top'] : '8' , 
                     isset($responsi_options_wp_login_page['responsi_login_button_padding_bottom']) ? $responsi_options_wp_login_page['responsi_login_button_padding_bottom'] : '8',
@@ -512,6 +540,7 @@ class WP_Login_Page_Responsi_Customize
                 'type'       => 'ibackground'
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_bg']) ? $responsi_options_wp_login_page['responsi_login_page_bg'] : array( 'onoff' => 'true', 'color' => '#f1f1f1'),
                 'transport' => 'postMessage'
             )
@@ -526,6 +555,7 @@ class WP_Login_Page_Responsi_Customize
                 'input_attrs' => array( 'class' => 'collapsed-custom')
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_bg_image_enable']) ? $responsi_options_wp_login_page['responsi_login_page_bg_image_enable'] : 'true',
                 'transport' => 'postMessage'
             )
@@ -540,6 +570,7 @@ class WP_Login_Page_Responsi_Customize
                 'input_attrs' => array( 'class' => 'hide-custom')
             ),
             'setting' => array(
+                'sanitize_callback' => 'esc_url',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_bg_image']) ? $responsi_options_wp_login_page['responsi_login_page_bg_image'] : '',
                 'transport' => 'postMessage'
             )
@@ -556,6 +587,7 @@ class WP_Login_Page_Responsi_Customize
                 )
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default'       => isset($responsi_options_wp_login_page['responsi_use_login_page_bg_size']) ? $responsi_options_wp_login_page['responsi_use_login_page_bg_size'] : 'false',
                 'transport' => 'postMessage'
             )
@@ -577,6 +609,7 @@ class WP_Login_Page_Responsi_Customize
                 )
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_background_size',
                 'default'       => array( 
                     isset($responsi_options_wp_login_page['responsi_login_page_bg_size_width']) ? $responsi_options_wp_login_page['responsi_login_page_bg_size_width'] : '100%' , 
                     isset($responsi_options_wp_login_page['responsi_login_page_bg_size_height']) ? $responsi_options_wp_login_page['responsi_login_page_bg_size_height'] : 'auto'
@@ -601,6 +634,7 @@ class WP_Login_Page_Responsi_Customize
                 'input_attrs' => array( 'class' => 'hide-custom')
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_bg_image_attachment']) ? $responsi_options_wp_login_page['responsi_login_page_bg_image_attachment'] : 'inherit',
                 'transport' => 'postMessage'
             )
@@ -620,6 +654,7 @@ class WP_Login_Page_Responsi_Customize
                 'input_attrs' => array( 'class' => 'hide-custom')
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_background_position',
                 'default'       => array( 
                     isset($responsi_options_wp_login_page['responsi_login_page_bg_image_position_vertical']) ? $responsi_options_wp_login_page['responsi_login_page_bg_image_position_vertical'] : '0' , 
                     isset($responsi_options_wp_login_page['responsi_login_page_bg_image_position_horizontal']) ? $responsi_options_wp_login_page['responsi_login_page_bg_image_position_horizontal'] : '0'
@@ -648,6 +683,7 @@ class WP_Login_Page_Responsi_Customize
                 )
             ),
             'setting' => array(
+                'sanitize_callback' => 'responsi_sanitize_choices',
                 'default'       => isset($responsi_options_wp_login_page['responsi_login_page_bg_image_repeat']) ? $responsi_options_wp_login_page['responsi_login_page_bg_image_repeat'] : 'repeat',
                 'transport' => 'postMessage'
             )

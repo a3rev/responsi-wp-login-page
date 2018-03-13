@@ -31,7 +31,10 @@ if ( !function_exists('responsi_custom_login_logo_url') ) {
     function responsi_custom_login_logo_url($text)
     {
     	global $responsi_options_wp_login_page;
-        return $responsi_options_wp_login_page['responsi_custom_login_logo_url']; // Escaping via esc_url() is done in wp-login.php.
+
+        $responsi_custom_login_logo_url = isset( $responsi_options_wp_login_page['responsi_custom_login_logo_url'] ) ? esc_url( $responsi_options_wp_login_page['responsi_custom_login_logo_url'] ) : '';
+
+        return $responsi_custom_login_logo_url; // Escaping via esc_url() is done in wp-login.php.
     }
 }
 
@@ -43,7 +46,10 @@ if (!function_exists('responsi_custom_login_logo_title')) {
     function responsi_custom_login_logo_title($text)
     {
     	global $responsi_options_wp_login_page;
-        return $responsi_options_wp_login_page['responsi_custom_login_logo_title']; // Escaping via esc_attr() is done in wp-login.php.
+
+        $responsi_custom_login_logo_title = isset( $responsi_options_wp_login_page['responsi_custom_login_logo_title'] ) ? esc_attr( $responsi_options_wp_login_page['responsi_custom_login_logo_title'] ) : '';
+
+        return $responsi_custom_login_logo_title; // Escaping via esc_attr() is done in wp-login.php.
     }
 }
 
