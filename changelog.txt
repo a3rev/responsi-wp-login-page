@@ -1,7 +1,8 @@
 *** Responsi WP Login Page ***
 
 = 1.3.1 - 2018/03/13 =
-* Tweak - Sanitized all database inputs and escaped functions
+* Maintenance Update. This update follows a full security review and extensive security hardening  
+* Tweak - Sanitized all database inputs and escaped functions 
 
 = 1.3.0 - 2018/02/13 =
 * Feature Upgrade - This upgrade features full integration with newly launched a3rev Dashboard plus compatibility with WordPress 4.9.4
