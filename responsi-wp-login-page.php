@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsi WP Login Page
 Description: Dont want your client / customers seeing the WordPress logo and links when they login to your site? Responsi WP Login Page allows you to customize the login page to match your sites design and remove all reference to WordPress.
-Version: 1.3.1
+Version: 1.3.2
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Text Domain: responsi-wp-login-page
@@ -30,7 +30,7 @@ define( 'RESPONSI_WPLOGIN_JS_URL', RESPONSI_WPLOGIN_URL . '/assets/js' );
 define( 'RESPONSI_WPLOGIN_CSS_URL', RESPONSI_WPLOGIN_URL . '/assets/css' );
 
 define( 'RESPONSI_WPLOGIN_KEY', 'responsi_wp_login_page' );
-define( 'RESPONSI_WPLOGIN_VERSION', '1.3.1' );
+define( 'RESPONSI_WPLOGIN_VERSION', '1.3.2' );
 
 function responsi_wp_login_page_activate_validate() {
     if ( 'responsi' !== get_template() ) {
@@ -46,15 +46,20 @@ register_activation_hook(__FILE__,'responsi_wp_login_page_activate_validate');
 if ( !file_exists( get_theme_root().'/responsi/functions.php' ) ) return;
 if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) return;
 if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
+if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
 
 add_action( 'after_setup_theme', 'responsi_addon_wp_login_page_upgrade_version' );
 function responsi_addon_wp_login_page_upgrade_version() {
 
 	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.2.4') === -1 ) {
 		global $responsi_wp_login_page;
-
         $responsi_wp_login_page->build_css_after_addon_updated();
 	}
+	if( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.2', '<') ){
+        global $responsi_wp_login_page;
+        $responsi_wp_login_page->responsi_wp_login_page_upgrade();
+        $responsi_wp_login_page->build_css_after_addon_updated();
+    }
 	update_option('a3rev_responsi_wp_login_page_version', RESPONSI_WPLOGIN_VERSION );
 }
 

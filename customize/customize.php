@@ -77,8 +77,13 @@ class WP_Login_Page_Responsi_Customize
 
     public function controls_settings($controls_settings)
     {
-
-        global $responsi_options_wp_login_page;
+        $_default = apply_filters( 'default_settings_wp_login_page', false );
+        
+        if( $_default ){
+            $responsi_options_wp_login_page = array();
+        }else{
+            global $responsi_options_wp_login_page;
+        }
 
         $_controls_settings = array();
 
@@ -133,24 +138,11 @@ class WP_Login_Page_Responsi_Customize
                 'label' => __('Border', 'responsi-wp-login-page'),
                 'section'    => 'login_sections',
                 'settings'   => 'multiple',
-                'type'       => 'border'
+                'type'       => 'border_boxes'
             ),
             'setting' => array(
-                'sanitize_callback' => 'responsi_sanitize_border',
-                'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_border']) ? $responsi_options_wp_login_page['responsi_login_page_container_border'] : array('width' => '1','style' => 'solid','color' => '#d2d2d2'),
-                'transport' => 'postMessage'
-            )
-        );
-        $_controls_settings['responsi_login_page_container_border_radius'] = array(
-            'control' => array(
-                'label'      => __('Border Corner', 'responsi-wp-login-page'),
-                'section'    => 'login_sections',
-                'settings'   => 'multiple',
-                'type'       => 'border_radius'
-            ),
-            'setting' => array(
-                'sanitize_callback' => 'responsi_sanitize_border_radius',
-                'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_border_radius']) ? $responsi_options_wp_login_page['responsi_login_page_container_border_radius'] : array('corner' => 'rounded','rounded_value' => '6'),
+                'sanitize_callback' => 'responsi_sanitize_border_boxes',
+                'default'       => isset($responsi_options_wp_login_page['responsi_login_page_container_border']) ? $responsi_options_wp_login_page['responsi_login_page_container_border'] : array('width' => '1','style' => 'solid','color' => '#d2d2d2','corner' => 'rounded', 'topleft' => '6', 'topright' => '6', 'bottomright' => '6', 'bottomleft' => '6'),
                 'transport' => 'postMessage'
             )
         );

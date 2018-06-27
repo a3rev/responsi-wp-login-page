@@ -45,8 +45,7 @@
 
         var container_css = '';
         container_css += responsiCustomize.build_background('responsi_login_page_container_bg', true);
-        container_css += responsiCustomize.build_border('responsi_login_page_container_border', '', true);
-        container_css += responsiCustomize.build_border_radius('responsi_login_page_container_border_radius', '', true);
+        container_css += responsiCustomize.build_border_boxes('responsi_login_page_container_border',true);
         container_css += responsiCustomize.build_box_shadow('responsi_login_page_container_box_shadow', true);
         container_css += responsiCustomize.build_padding_margin('responsi_login_page_container_padding', 'padding', true);
 
@@ -92,15 +91,17 @@
     ];
 
     var border_fields = [
-        'responsi_login_page_container_border',
         'responsi_login_button_border_top',
         'responsi_login_button_border_bottom',
         'responsi_login_button_border_left',
         'responsi_login_button_border_right',
     ];
 
+    var border_boxes_fields = [
+        'responsi_login_page_container_border',
+    ];
+
     var border_radius_fields = [
-        'responsi_login_page_container_border_radius',
         'responsi_login_button_border_radius_tl',
         'responsi_login_button_border_radius_tr',
         'responsi_login_button_border_radius_bl',
@@ -161,6 +162,16 @@
 
     $.each(border_fields, function(inx, val) {
         $.each(typeborder, function(i, v) {
+            wp.customize(val + '[' + v + ']', function(value) {
+                value.bind(function(to) {
+                    customize_login_page_preview();
+                });
+            });
+        });
+    });
+
+    $.each(border_boxes_fields, function(inx, val) {
+        $.each(typeborderboxes, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
