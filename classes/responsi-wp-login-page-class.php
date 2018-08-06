@@ -17,6 +17,10 @@ class Responsi_WP_Login_Page {
 		add_action( 'customize_save_after', array( $this, 'responsi_customize_save_options') );
 	}
 
+	public function _add_filter_default_settings_options(){
+		return true;
+	}
+
 	public function responsi_customize_save_options( $settings ) {
 
 		$slug = 'wp_login_page';
@@ -35,7 +39,7 @@ class Responsi_WP_Login_Page {
 
 		if( is_array( ${'responsi_options_' . $slug} ) && count( ${'responsi_options_' . $slug} ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){
 			
-			add_filter( 'default_settings_' . $slug, create_function( '', 'return true;' ) );
+			add_filter( 'default_settings_' . $slug, array( $this, '_add_filter_default_settings_options' ) );
 			
 			$_default_options = responsi_default_options( $slug );
 

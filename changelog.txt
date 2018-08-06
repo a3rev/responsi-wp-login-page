@@ -1,5 +1,12 @@
 *** Responsi WP Login Page ***
 
+= 1.3.3 - 2018/08/06 =
+* This maintenance update is for compatibility with WordPress 4.9.8, Gutenberg 3.4.0, PHP 7.1.0, PHP 7.2.0, Responsi Framework 7.0.2
+* Tweak - Tested for compatibility with Framework v 7.0.2
+* Tweak - Tested for compatibility with WordPress 4.9.8
+* Tweak - Tested for compatibility with Gutenberg 3.4.0 
+* Tweak - Replace create_function deprecated in PHP 7.2.0
+
 = 1.3.2 - 2018/06/27 =
 * This Maintenance update is a refactor of customizer code for compatibility with Responsi framework version 6.9.6 
 * Refactor - Conversion of single border and border radius controls to a group control for improved customizer menu UI and UX
