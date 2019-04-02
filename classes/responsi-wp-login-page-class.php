@@ -152,14 +152,19 @@ class Responsi_WP_Login_Page {
 	    }
 	    
 	    if( 'responsi-blank-child' == $_childthemes ){
-	        $responsi_mods = get_option( $slug .'_responsi', array() );
-	        $responsi_blank_child =  get_option( $slug . '_responsi-blank-child', array() );
-	        if( is_array($responsi_mods) ){
-	            $_customize_options = array_replace_recursive( $_customize_options, $responsi_mods );
-	        }
-	        if( is_array($responsi_blank_child) ){
-	            $_customize_options = array_replace_recursive( $_customize_options, $responsi_blank_child );
-	        }
+
+	    	if( function_exists('_blank_child_customize_options')){
+	    		$_customize_options = _blank_child_customize_options( $slug, $_customize_options, $_default_options );
+	    	}else{
+	    		$responsi_mods = get_option( $slug .'_responsi', array() );
+		        $responsi_blank_child =  get_option( $slug . '_responsi-blank-child', array() );
+		        if( is_array($responsi_mods) ){
+		            $_customize_options = array_replace_recursive( $_customize_options, $responsi_mods );
+		        }
+		        if( is_array($responsi_blank_child) ){
+		            $_customize_options = array_replace_recursive( $_customize_options, $responsi_blank_child );
+		        }
+	    	}
 	    }
 
 	    if( is_customize_preview() && ( isset( $_REQUEST['changeset_uuid'] ) || isset( $_REQUEST['customize_changeset_uuid'] ) ) ){

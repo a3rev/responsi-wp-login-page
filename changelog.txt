@@ -1,5 +1,10 @@
 *** Responsi WP Login Page ***
 
+= 1.3.4 - 2019/04/02 =
+* This maintenance update is for compatibility with WordPress Major version 5.1.1 plus a customizer menu bug fix when using blank child theme.
+* Tweak - Tested for compatibility with WordPress 5.1.1
+* Fix - Not saving customizer menu options when using the Blank Child Theme
+
 = 1.3.3 - 2018/08/06 =
 * This maintenance update is for compatibility with WordPress 4.9.8, Gutenberg 3.4.0, PHP 7.1.0, PHP 7.2.0, Responsi Framework 7.0.2
 * Tweak - Tested for compatibility with Framework v 7.0.2
