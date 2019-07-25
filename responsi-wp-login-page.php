@@ -51,15 +51,10 @@ if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) r
 add_action( 'after_setup_theme', 'responsi_addon_wp_login_page_upgrade_version' );
 function responsi_addon_wp_login_page_upgrade_version() {
 
-	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.2.4') === -1 ) {
+	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.5') === -1 ) {
 		global $responsi_wp_login_page;
         $responsi_wp_login_page->build_css_after_addon_updated();
 	}
-	if( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.5', '<') ){
-        global $responsi_wp_login_page;
-        $responsi_wp_login_page->responsi_wp_login_page_upgrade();
-        $responsi_wp_login_page->build_css_after_addon_updated();
-    }
 	update_option('a3rev_responsi_wp_login_page_version', RESPONSI_WPLOGIN_VERSION );
 }
 
