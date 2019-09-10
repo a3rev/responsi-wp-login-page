@@ -1,5 +1,11 @@
 *** Responsi WP Login Page ***
 
+= 1.3.6 - 2019/09/03 =
+* This upgrade is for compatibility with Responsi Framework 7.6.0
+* Refactor – Rewrite frontend HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces 
+* Refactor – Rewrite customizer HTML, CSS, JS and Variables Class and ID names to the new framework 7.6.0 namespaces
+* Refactor - HTML, CSS, JS and Variables Class and ID names called from the framework making plugin file sizes smaller and faster to load
+
 = 1.3.5 - 2019/07/25 =
 * This upgrade is for compatibility with Responsi Framework 7.5.0
 * Refactor - All plugin CSS and JS from Class ID to Class name for new Responsi Class names.

@@ -63,7 +63,7 @@ function responsi_custom_login_enqueue_scripts() {
         add_filter('login_headerurl', 'responsi_custom_login_logo_url', 10);
     }
 	if ('' != $responsi_options_wp_login_page['responsi_custom_login_logo_title']) {
-        add_filter('login_headertitle', 'responsi_custom_login_logo_title', 10);
+        add_filter('login_headertext', 'responsi_custom_login_logo_title', 10);
     }
 }
 

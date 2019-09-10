@@ -26,7 +26,7 @@
         }
 
         var bg_css = '';
-        bg_css += responsiCustomize.build_background('responsi_login_page_bg', true);
+        bg_css += _cFn.renderBG('responsi_login_page_bg', true);
         if (wp.customize.value('responsi_login_page_bg_image_enable')() == 'true') {
             bg_css += 'background-image:url(' + wp.customize.value('responsi_login_page_bg_image')() + ');';
             bg_css += 'background-attachment:' + wp.customize.value('responsi_login_page_bg_image_attachment')() + ';';
@@ -44,15 +44,15 @@
         css += 'html body.login, html body.login.mobile-view #wrap:after {' + bg_css + '}';
 
         var container_css = '';
-        container_css += responsiCustomize.build_background('responsi_login_page_container_bg', true);
-        container_css += responsiCustomize.build_border_boxes('responsi_login_page_container_border',true);
-        container_css += responsiCustomize.build_box_shadow('responsi_login_page_container_box_shadow', true);
-        container_css += responsiCustomize.build_padding_margin('responsi_login_page_container_padding', 'padding', true);
+        container_css += _cFn.renderBG('responsi_login_page_container_bg', true);
+        container_css += _cFn.renderBorderBoxs('responsi_login_page_container_border',true);
+        container_css += _cFn.renderShadow('responsi_login_page_container_box_shadow', true);
+        container_css += _cFn.renderMarPad('responsi_login_page_container_padding', 'padding', true);
 
         css += 'html body.login #login { ' + container_css + '}';
 
         css += '.login form, body.login label, body.login a, .login form .forgetmenot label {';
-        css += responsiCustomize.build_typography('responsi_login_page_container_font', true);
+        css += _cFn.renderTypo('responsi_login_page_container_font', true);
         css += '}';
 
         css += 'body.login #login * a{';
@@ -72,7 +72,7 @@
         if (responsi_login_button_text_shadow == 'true') {
             login_button_text_shadow = '0 -1px 1px rgba(0, 0, 0, 0.25)';
         }
-        css += 'body.login #login * input[type="submit"]{' + responsiCustomize.build_padding_margin('responsi_login_button_padding', 'padding') + responsiCustomize.build_typography('responsi_login_button_text', true) + 'text-transform: ' + responsi_login_button_text_transform + ';' + responsiCustomize.build_border('responsi_login_button_border_top', 'top') + responsiCustomize.build_border('responsi_login_button_border_bottom', 'bottom') + responsiCustomize.build_border('responsi_login_button_border_left', 'left') + responsiCustomize.build_border('responsi_login_button_border_right', 'right') + 'background-color: ' + responsi_login_button_color + ';text-shadow: ' + login_button_text_shadow + ' !important;background: ' + responsi_login_button_color + ';background: linear-gradient( ' + responsi_login_button_gradient_from + ' , ' + responsi_login_button_gradient_to + ' );' + responsiCustomize.build_border_radius('responsi_login_button_border_radius_tl', 'top-left') + responsiCustomize.build_border_radius('responsi_login_button_border_radius_tr', 'top-right') + responsiCustomize.build_border_radius('responsi_login_button_border_radius_bl', 'bottom-left') + responsiCustomize.build_border_radius('responsi_login_button_border_radius_br', 'bottom-right') + responsiCustomize.build_box_shadow('responsi_login_button_border_box_shadow') + '}';
+        css += 'body.login #login * input[type="submit"]{' + _cFn.renderMarPad('responsi_login_button_padding', 'padding') + _cFn.renderTypo('responsi_login_button_text', true) + 'text-transform: ' + responsi_login_button_text_transform + ';' + _cFn.renderBorder('responsi_login_button_border_top', 'top') + _cFn.renderBorder('responsi_login_button_border_bottom', 'bottom') + _cFn.renderBorder('responsi_login_button_border_left', 'left') + _cFn.renderBorder('responsi_login_button_border_right', 'right') + 'background-color: ' + responsi_login_button_color + ';text-shadow: ' + login_button_text_shadow + ' !important;background: ' + responsi_login_button_color + ';background: linear-gradient( ' + responsi_login_button_gradient_from + ' , ' + responsi_login_button_gradient_to + ' );' + _cFn.renderRadius('responsi_login_button_border_radius_tl', 'top-left') + _cFn.renderRadius('responsi_login_button_border_radius_tr', 'top-right') + _cFn.renderRadius('responsi_login_button_border_radius_bl', 'bottom-left') + _cFn.renderRadius('responsi_login_button_border_radius_br', 'bottom-right') + _cFn.renderShadow('responsi_login_button_border_box_shadow') + '}';
 
         if ($('#responsi_wplogin_custom_css').length > 0) {
             $('#responsi_wplogin_custom_css').html(css);
@@ -141,7 +141,7 @@
     ];
 
     $.each(fonts_fields, function(inx, val) {
-        $.each(typefonts, function(i, v) {
+        $.each(ctrlFonts, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
@@ -151,7 +151,7 @@
     });
 
     $.each(background_fields, function(inx, val) {
-        $.each(typebg, function(i, v) {
+        $.each(ctrlBG, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
@@ -161,7 +161,7 @@
     });
 
     $.each(border_fields, function(inx, val) {
-        $.each(typeborder, function(i, v) {
+        $.each(ctrlBorder, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
@@ -171,7 +171,7 @@
     });
 
     $.each(border_boxes_fields, function(inx, val) {
-        $.each(typeborderboxes, function(i, v) {
+        $.each(ctrlBorderBoxes, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
@@ -181,7 +181,7 @@
     });
 
     $.each(border_radius_fields, function(inx, val) {
-        $.each(typeradius, function(i, v) {
+        $.each(ctrlRadius, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
@@ -191,7 +191,7 @@
     });
 
     $.each(shadow_fields, function(inx, val) {
-        $.each(typeshadow, function(i, v) {
+        $.each(ctrlShadow, function(i, v) {
             wp.customize(val + '[' + v + ']', function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
@@ -201,7 +201,7 @@
     });
 
     $.each(margin_padding_fields, function(inx, val) {
-        $.each(typemp, function(i, v) {
+        $.each(ctrlMarPad, function(i, v) {
             wp.customize(val + v, function(value) {
                 value.bind(function(to) {
                     customize_login_page_preview();
