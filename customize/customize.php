@@ -1,5 +1,8 @@
 <?php
-class WP_Login_Page_Responsi_Customize
+
+namespace A3Rev\RWPLogin;
+
+class Customizer
 {
     public function __construct()
     {
@@ -686,5 +689,4 @@ class WP_Login_Page_Responsi_Customize
         return $controls_settings;
     }
 }
-new WP_Login_Page_Responsi_Customize();
 ?>

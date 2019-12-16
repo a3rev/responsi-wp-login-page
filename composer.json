@@ -1,0 +1,21 @@
+{
+    "name": "a3rev/responsi-wp-login-page",
+    "description": "Don't want your client / customers seeing the WordPress logo and links when they login to your site? Responsi WP Login Page allows you to customize the login page to match your sites design and remove all reference to WordPress.",
+    "authors": [
+        {
+            "name": "a3rev Software",
+            "email": "admin@a3rev.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "php": ">=5.6|>=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "A3Rev\\RWPLogin\\": [ "src/", "admin/", "upgrade", "classes", "customize" ]
+        }
+    }
+}

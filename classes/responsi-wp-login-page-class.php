@@ -1,6 +1,8 @@
 <?php
-class Responsi_WP_Login_Page {
-	var $admin_page;
+
+namespace A3Rev\RWPLogin;
+
+class Main {
 
 	public function __construct() {
 		$this->init();
@@ -520,6 +522,4 @@ class Responsi_WP_Login_Page {
 
 	}
 }
-global $responsi_wp_login_page;
-$responsi_wp_login_page = new Responsi_WP_Login_Page();
 ?>

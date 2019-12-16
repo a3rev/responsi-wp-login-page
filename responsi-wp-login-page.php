@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Responsi WP Login Page
-Description: Dont want your client / customers seeing the WordPress logo and links when they login to your site? Responsi WP Login Page allows you to customize the login page to match your sites design and remove all reference to WordPress.
-Version: 1.3.6
+Description: Don't want your client / customers seeing the WordPress logo and links when they login to your site? Responsi WP Login Page allows you to customize the login page to match your sites design and remove all reference to WordPress.
+Version: 1.3.7
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Text Domain: responsi-wp-login-page
@@ -30,7 +30,7 @@ define( 'RESPONSI_WPLOGIN_JS_URL', RESPONSI_WPLOGIN_URL . '/assets/js' );
 define( 'RESPONSI_WPLOGIN_CSS_URL', RESPONSI_WPLOGIN_URL . '/assets/css' );
 
 define( 'RESPONSI_WPLOGIN_KEY', 'responsi_wp_login_page' );
-define( 'RESPONSI_WPLOGIN_VERSION', '1.3.6' );
+define( 'RESPONSI_WPLOGIN_VERSION', '1.3.7' );
 
 function responsi_wp_login_page_activate_validate() {
     if ( 'responsi' !== get_template() ) {
@@ -48,10 +48,24 @@ if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) 
 if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
 if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
 
+if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
+    require __DIR__ . '/vendor/autoload.php';
+
+    global $responsi_wp_login_page_admin,$responsi_wp_login_page;
+    $responsi_wp_login_page_admin                   = new \A3Rev\RWPLogin\Admin();
+    $responsi_wp_login_page                         = new \A3Rev\RWPLogin\Main();
+                                                      new \A3Rev\RWPLogin\Customizer();
+
+
+
+} else {
+    return;
+}
+
 add_action( 'after_setup_theme', 'responsi_addon_wp_login_page_upgrade_version' );
 function responsi_addon_wp_login_page_upgrade_version() {
 
-	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.6') === -1 ) {
+	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.7') === -1 ) {
 		global $responsi_wp_login_page;
         $responsi_wp_login_page->build_css_after_addon_updated();
 	}
@@ -60,12 +74,12 @@ function responsi_addon_wp_login_page_upgrade_version() {
 }
 
 include ( 'upgrade/plugin_upgrade.php' );
-include ( 'admin/responsi-wp-login-page-admin.php' );
+//include ( 'admin/responsi-wp-login-page-admin.php' );
 include ( 'admin/responsi-wp-login-page-init.php' );
 include ( 'classes/responsi-wp-login-page-function.php' );
-include ( 'classes/responsi-wp-login-page-class.php' );
+//include ( 'classes/responsi-wp-login-page-class.php' );
 
-add_filter('responsi_includes_customizer','wp_login_page_includes_customizer');
+//add_filter('responsi_includes_customizer','wp_login_page_includes_customizer');
 function wp_login_page_includes_customizer( $includes_customizer ) {
 	$includes_customizer[] = RESPONSI_WPLOGIN_PATH.'/customize/customize.php';
 	return $includes_customizer;

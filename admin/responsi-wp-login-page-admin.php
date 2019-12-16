@@ -1,6 +1,8 @@
 <?php
-class Responsi_WP_Login_Page_Admin {
-	var $admin_page;
+
+namespace A3Rev\RWPLogin;
+
+class Admin {
 
 	public function __construct () {
 		$this->init();
@@ -21,7 +23,7 @@ class Responsi_WP_Login_Page_Admin {
 
 		global $wp_roles;
 		if ( ! isset( $wp_roles ) ) {
-			$wp_roles = new WP_Roles();
+			$wp_roles = new \WP_Roles();
 		}
 		$roles = $wp_roles->get_names();
 
@@ -48,21 +50,5 @@ class Responsi_WP_Login_Page_Admin {
 	}
 
 }
-global $responsi_wp_login_page_admin;
-$responsi_wp_login_page_admin = new Responsi_WP_Login_Page_Admin();
 
-function _customize_menu_wp_login_page(){
-	$_permisstion = true;
-
-	if( function_exists('framework_a3rev_super_user_menu_permission') ){
-		if( framework_a3rev_super_user_menu_permission('framework_a3rev_permissions_wp_login_page_addon_roles') ){
-			return true;
-		}else{
-			return false;
-		}
-	}else{
-		return true;
-	}
-	return true;
-}
 ?>
