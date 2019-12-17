@@ -17,6 +17,8 @@ class Main {
 		add_action( 'login_enqueue_scripts',  array( $this, 'customize_preview_inline_style'), 11 );
 		add_action( 'template_include',       array( $this, 'on_active_template_preview'),99 );
 		add_action( 'customize_save_after', array( $this, 'responsi_customize_save_options') );
+		add_action( 'login_head', 'responsi_register_webfonts', 0 );
+		add_action( 'login_head', array( $this, 'add_google_fonts_login_form') );
 	}
 
 	public function _add_filter_default_settings_options(){
@@ -454,6 +456,16 @@ class Main {
 			}else{
 				wp_add_inline_style( 'login', get_theme_mod( 'wp_login_page_custom_css' ) );
 			}
+			
+		}
+	}
+
+	function add_google_fonts_login_form(){
+
+		if ( !is_customize_preview() ) {
+
+			wp_enqueue_style( 'google-fonts' );
+
 		}
 	}
 
