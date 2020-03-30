@@ -74,11 +74,7 @@ before_script:
     fi
     
 script:
-  - |
-    if [[ ! -z "$WP_VERSION" ]] ; then
-      phpunit
-      WP_MULTISITE=1 phpunit
-    fi
+ 
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
       phpcs
