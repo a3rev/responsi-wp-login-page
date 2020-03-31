@@ -93,43 +93,10 @@ install_wp() {
 }
 
 install_responsi() {
-    # Script Variables
-	BRANCH=$TRAVIS_BRANCH
-	REPO=$TRAVIS_REPO_SLUG
-	WORKING_DIR="$PWD"
-
-	if [ "$TRAVIS_PULL_REQUEST_BRANCH" != "" ]; then
-		BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
-		REPO=$TRAVIS_PULL_REQUEST_SLUG
-	fi
-
     cd "$WP_CORE_DIR/wp-content/themes"
-    git clone --depth 1 "https://github.com/a3rev/responsi.git"
-    
-    # Back to original dir
-	cd "$WORKING_DIR"
-}
-
-install_wc() {
-    # Script Variables
-	BRANCH=$TRAVIS_BRANCH
-	REPO=$TRAVIS_REPO_SLUG
-	WORKING_DIR="$PWD"
-
-	if [ "$TRAVIS_PULL_REQUEST_BRANCH" != "" ]; then
-		BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
-		REPO=$TRAVIS_PULL_REQUEST_SLUG
-	fi
-
-    cd "$WP_CORE_DIR/wp-content/plugins"
-    git clone --depth 1 "https://github.com/woocommerce/woocommerce.git"
-    # install dependencies
-    cd woocommerce
-	composer install
-	npm install --no-dev
-    
-    # Back to original dir
-	cd "$WORKING_DIR"
+    git clone https://github.com/a3rev/responsi.git responsi
+    cd responsi
+    cd -
 }
 
 install_test_suite() {
@@ -188,7 +155,6 @@ install_db() {
 }
 
 install_wp
-install_responsi
 install_test_suite
 install_db
-install_wc
+install_responsi
