@@ -93,10 +93,26 @@ install_wp() {
 }
 
 install_responsi() {
+    # cd "$WP_CORE_DIR/wp-content/themes"
+    # git clone https://github.com/a3rev/responsi.git responsi
+    # cd responsi
+    # cd -
+
+    # Script Variables
+	BRANCH=$TRAVIS_BRANCH
+	REPO=$TRAVIS_REPO_SLUG
+	WORKING_DIR="$PWD"
+
+	if [ "$TRAVIS_PULL_REQUEST_BRANCH" != "" ]; then
+		BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+		REPO=$TRAVIS_PULL_REQUEST_SLUG
+	fi
+
     cd "$WP_CORE_DIR/wp-content/themes"
-    git clone https://github.com/a3rev/responsi.git responsi
-    cd responsi
-    cd -
+    git clone --depth 1 "https://github.com/a3rev/responsi.git" responsi
+    
+    # Back to original dir
+	cd "$WORKING_DIR"
 }
 
 install_test_suite() {
