@@ -93,11 +93,6 @@ install_wp() {
 }
 
 install_responsi() {
-    # cd "$WP_CORE_DIR/wp-content/themes"
-    # git clone https://github.com/a3rev/responsi.git responsi
-    # cd responsi
-    # cd -
-
     # Script Variables
 	BRANCH=$TRAVIS_BRANCH
 	REPO=$TRAVIS_REPO_SLUG
@@ -109,7 +104,7 @@ install_responsi() {
 	fi
 
     cd "$WP_CORE_DIR/wp-content/themes"
-    git clone --depth 1 "https://github.com/a3rev/responsi.git" responsi
+    git clone --depth 1 "https://github.com/a3rev/responsi.git"
     
     # Back to original dir
 	cd "$WORKING_DIR"
@@ -171,6 +166,6 @@ install_db() {
 }
 
 install_wp
+install_responsi
 install_test_suite
 install_db
-install_responsi

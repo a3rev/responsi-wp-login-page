@@ -29,8 +29,8 @@ function _test_includes() {
 function responsi_dir() {
 	static $dir = '';
 	if ( $dir === '' ) {
-		if ( file_exists( WP_CONTENT_DIR . '/responsi/functions.php' ) ) {
-			$dir = WP_CONTENT_DIR . '/responsi';
+		if ( file_exists( WP_CONTENT_DIR . '/themes/responsi/functions.php' ) ) {
+			$dir = WP_CONTENT_DIR . '/themes/responsi';
 			echo "Found Responsi theme in content dir." . PHP_EOL;
 		} elseif ( file_exists( dirname( dirname( __DIR__ ) ) . '/responsi/functions.php' ) ) {
 			$dir = dirname( dirname( __DIR__ ) ) . '/responsi';
