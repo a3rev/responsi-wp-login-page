@@ -48,6 +48,7 @@ if( !defined( 'RESPONSI_WPLOGIN_TRAVIS' ) ){
 	if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
 	if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
 }
+
 if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
     require __DIR__ . '/vendor/autoload.php';
 
