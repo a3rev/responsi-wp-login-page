@@ -28,7 +28,6 @@ define( 'RESPONSI_WPLOGIN_URL', str_replace( array( 'http:','https:' ), '', untr
 define( 'RESPONSI_WPLOGIN_IMAGES_URL', RESPONSI_WPLOGIN_URL . '/assets/images' );
 define( 'RESPONSI_WPLOGIN_JS_URL', RESPONSI_WPLOGIN_URL . '/assets/js' );
 define( 'RESPONSI_WPLOGIN_CSS_URL', RESPONSI_WPLOGIN_URL . '/assets/css' );
-
 define( 'RESPONSI_WPLOGIN_KEY', 'responsi_wp_login_page' );
 define( 'RESPONSI_WPLOGIN_VERSION', '1.3.7' );
 
@@ -57,8 +56,6 @@ if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
     $responsi_wp_login_page                         = new \A3Rev\RWPLogin\Main();
                                                       new \A3Rev\RWPLogin\Customizer();
 
-
-
 } else {
     return;
 }
@@ -75,15 +72,7 @@ function responsi_addon_wp_login_page_upgrade_version() {
 }
 
 include ( 'upgrade/plugin_upgrade.php' );
-//include ( 'admin/responsi-wp-login-page-admin.php' );
 include ( 'admin/responsi-wp-login-page-init.php' );
 include ( 'classes/responsi-wp-login-page-function.php' );
-//include ( 'classes/responsi-wp-login-page-class.php' );
-
-//add_filter('responsi_includes_customizer','wp_login_page_includes_customizer');
-function wp_login_page_includes_customizer( $includes_customizer ) {
-	$includes_customizer[] = RESPONSI_WPLOGIN_PATH.'/customize/customize.php';
-	return $includes_customizer;
-}
 
 ?>
