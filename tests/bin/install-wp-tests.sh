@@ -92,6 +92,49 @@ install_wp() {
 	download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php $WP_CORE_DIR/wp-content/db.php
 }
 
+install_responsi() {
+    # Script Variables
+	BRANCH=$TRAVIS_BRANCH
+	REPO=$TRAVIS_REPO_SLUG
+	WORKING_DIR="$PWD"
+
+	if [ "$TRAVIS_PULL_REQUEST_BRANCH" != "" ]; then
+		BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+		REPO=$TRAVIS_PULL_REQUEST_SLUG
+	fi
+
+    cd "$WP_CORE_DIR/wp-content/themes"
+    git clone --depth 1 "https://github.com/a3rev/responsi.git"
+    # install dependencies
+    cd responsi
+	composer install
+	npm install --no-dev
+    
+    # Back to original dir
+	cd "$WORKING_DIR"
+}
+
+install_wc() {
+    # Script Variables
+	BRANCH=$TRAVIS_BRANCH
+	REPO=$TRAVIS_REPO_SLUG
+	WORKING_DIR="$PWD"
+
+	if [ "$TRAVIS_PULL_REQUEST_BRANCH" != "" ]; then
+		BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
+		REPO=$TRAVIS_PULL_REQUEST_SLUG
+	fi
+
+    cd "$WP_CORE_DIR/wp-content/plugins"
+    git clone --depth 1 "https://github.com/woocommerce/woocommerce.git"
+    # install dependencies
+    cd woocommerce
+	composer install
+	npm install --no-dev
+    
+    # Back to original dir
+	cd "$WORKING_DIR"
+}
 
 install_test_suite() {
 	# portable in-place argument for both GNU sed and Mac OSX sed
@@ -149,5 +192,7 @@ install_db() {
 }
 
 install_wp
+install_responsi
 install_test_suite
 install_db
+install_wc
