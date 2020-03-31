@@ -19,13 +19,6 @@ if ( ! file_exists( $_tests_dir . '/includes/functions.php' ) ) {
 // Give access to tests_add_filter() function.
 require_once $_tests_dir . '/includes/functions.php';
 
-/**
- * Adds WooCommerce testing framework classes.
- */
-function _test_includes() {
-	require_once ( responsi_dir().'/functions/admin-functions.php' );
-}
-
 function responsi_dir() {
 	static $dir = '';
 	if ( $dir === '' ) {
@@ -83,7 +76,6 @@ function _manual_install_data() {
 	}
 
 	echo esc_html( 'Installing My Plugin Data ...' . PHP_EOL );
-	responsi_addon_wp_login_page_upgrade_version();
 
 	define( 'WP_UNINSTALL_PLUGIN', true );
 
@@ -95,5 +87,3 @@ tests_add_filter( 'setup_theme', '_manual_install_data' );
 
 // Start up the WP testing environment.
 require $_tests_dir . '/includes/bootstrap.php';
-
-_test_includes();

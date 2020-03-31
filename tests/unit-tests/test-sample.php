@@ -26,12 +26,4 @@ class a3Rev_Tests_Sample extends WP_UnitTestCase {
 		$this->assertEquals( 1 , $output );
 	}
 
-	function test_responsi_css() {
-
-		global $responsi_wp_login_page;
-		$output = (string)$responsi_wp_login_page->responsi_build_dynamic_css();
-		$this->assertStringContainsString( 'html body.login form, html body.login form.loginform, html body.login #login form.loginform' , $output );
-
-	}
-
 }
