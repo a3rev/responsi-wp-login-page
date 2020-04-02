@@ -29,7 +29,7 @@ class Main {
 
 		$slug = 'wp_login_page';
 
-	    global ${'responsi_options_' . $slug}, $wp_customize;
+	    global $wp_customize;
 
 		$post_value = array();
 
@@ -41,7 +41,7 @@ class Main {
 			$post_value = apply_filters( 'responsi_customized_changeset_data_value', $post_value );
 		}
 
-		if( is_array( ${'responsi_options_' . $slug} ) && count( ${'responsi_options_' . $slug} ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){
+		if( is_array( $GLOBALS['responsi_options_' . $slug] ) && count( $GLOBALS['responsi_options_' . $slug] ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){
 			
 			add_filter( 'default_settings_' . $slug, array( $this, '_add_filter_default_settings_options' ) );
 			
@@ -83,7 +83,7 @@ class Main {
 							}
 						}
 
-						$_customize_options = array_replace_recursive( ${'responsi_options_' . $slug}, $post_value );
+						$_customize_options = array_replace_recursive( $GLOBALS['responsi_options_' . $slug], $post_value );
 						foreach( $_customize_options as $key => $value ){
 							if( array_key_exists( $key, $_default_options )){
 								if( isset( $new_options[$key] ) ){
@@ -131,7 +131,7 @@ class Main {
 
 		$slug = 'wp_login_page';
 
-	    global ${'responsi_options_' . $slug}, $wp_customize;
+	    global $wp_customize;
 
 	    if( !function_exists('responsi_default_options') ){
 	    	return;
@@ -213,9 +213,9 @@ class Main {
 
 	    }
 
-	    ${'responsi_options_' . $slug} = $_customize_options;
+	    $GLOBALS['responsi_options_' . $slug] = $_customize_options;
 
-	    return ${'responsi_options_' . $slug};
+	    return $GLOBALS['responsi_options_' . $slug];
 	}
 
 	public function responsi_build_dynamic_css( $preview = false ) {

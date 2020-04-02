@@ -14,6 +14,12 @@ class a3Rev_Tests_Sample extends WP_UnitTestCase {
 	 * A single example test.
 	 */
 
+	function test_responsi_theme() {
+		$output = 1;
+
+		$this->assertTrue( defined( 'RESPONSI_FRAMEWORK_VERSION' ) );
+	}
+
 	function test_sample() {
 		$output = 1;
 
