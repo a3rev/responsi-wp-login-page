@@ -3,7 +3,7 @@ Contributors: a3rev, a3rev Software
 Tags: responsi, responsi framework, wordpress login page
 Requires at least: 4.4
 Tested up to: 4.9.4
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
