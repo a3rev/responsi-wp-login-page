@@ -1,5 +1,11 @@
 *** Responsi WP Login Page ***
 
+= 1.3.11 - 2021/07/19 =
+* This maintenance release is for compatibility with WordPress major version 5.8
+* Tweak - Test for compatibility with WordPress 5.8
+* Tweak - Add Update URI to plugin header with unique name
+* Tweak - Skip version 1.3.10 to prevent PHP version misread
+
 = 1.3.9 - 2021/02/02 =
 * This maintenance release fixes a jQuery bug preventing the site logo showing on the login page
 * Fix - jQuery not working with WordPress 5.6
