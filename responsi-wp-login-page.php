@@ -2,12 +2,12 @@
 /*
 Plugin Name: Responsi WP Login Page
 Description: Don't want your client / customers seeing the WordPress logo and links when they login to your site? Responsi WP Login Page allows you to customize the login page to match your sites design and remove all reference to WordPress.
-Version: 1.3.11
+Version: 1.3.12
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Update URI: a3-responsi-wp-login-page
 Requires at least: 4.4
-Tested up to: 5.8
+Tested up to: 5.9
 Text Domain: responsi-wp-login-page
 Domain Path: /languages
 License: This software is distributed under the terms of GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
@@ -32,7 +32,7 @@ define( 'RESPONSI_WPLOGIN_IMAGES_URL', RESPONSI_WPLOGIN_URL . '/assets/images' )
 define( 'RESPONSI_WPLOGIN_JS_URL', RESPONSI_WPLOGIN_URL . '/assets/js' );
 define( 'RESPONSI_WPLOGIN_CSS_URL', RESPONSI_WPLOGIN_URL . '/assets/css' );
 define( 'RESPONSI_WPLOGIN_KEY', 'responsi_wp_login_page' );
-define( 'RESPONSI_WPLOGIN_VERSION', '1.3.11' );
+define( 'RESPONSI_WPLOGIN_VERSION', '1.3.12' );
 
 function responsi_wp_login_page_activate_validate() {
     if ( 'responsi' !== get_template() ) {
@@ -67,7 +67,7 @@ if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
 add_action( 'after_setup_theme', 'responsi_addon_wp_login_page_upgrade_version' );
 function responsi_addon_wp_login_page_upgrade_version() {
 
-	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.11') === -1 ) {
+	if ( version_compare(get_option('a3rev_responsi_wp_login_page_version'), '1.3.12') === -1 ) {
 		global $responsi_wp_login_page;
         $responsi_wp_login_page->build_css_after_addon_updated();
 	}
