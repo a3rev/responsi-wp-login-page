@@ -13,7 +13,7 @@ if (!function_exists('responsi_custom_login_logo')) {
         	?>
 			<script type="text/javascript">
 				jQuery(window).on('load', function () {
-                    jQuery("#login h1 a").html('<img src="<?php echo $logo; ?>" /> <style type="text/css">body #login h1 a { background:none !important; width: auto;height:auto !important;text-indent:inherit !important;}body #login h1 a img{ background:none !important; width: auto;height:auto !important;max-width:100% !important;}</style>');
+                    jQuery("#login h1 a").html('<img src="<?php echo esc_url($logo); ?>" /> <style type="text/css">body #login h1 a { background:none !important; width: auto;height:auto !important;text-indent:inherit !important;}body #login h1 a img{ background:none !important; width: auto;height:auto !important;max-width:100% !important;}</style>');
                 });
 			</script>
 			<?php

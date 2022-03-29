@@ -12,7 +12,7 @@ class Main {
 		add_action( 'login_enqueue_scripts',array( $this,'customize_options'), 9 );
 		add_action( 'init',array( $this,'customize_options'), 2 );
 		add_action( 'responsi_after_setup_theme', array( $this,'responsi_build_css_theme_actived') );
-		add_filter( 'responsi_google_webfonts', array( $this,'responsi_addon_google_webfonts'));
+		add_filter( 'responsi_google_webfonts', array( $this, 'responsi_addon_google_webfonts') );
 		add_action( 'wp_enqueue_scripts',  array( $this, 'customize_preview_inline_style'), 11 );
 		add_action( 'login_enqueue_scripts',  array( $this, 'customize_preview_inline_style'), 11 );
 		add_action( 'template_include',       array( $this, 'on_active_template_preview'),99 );
