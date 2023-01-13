@@ -318,6 +318,11 @@ class Main {
 		';
 
 		$output .= '
+
+		html body.login #login #wfls-prompt-overlay{
+			'.responsi_generate_background_color( $responsi_login_page_container_bg ).'
+		}
+
 		html body.login #login {
 			'.$container_css.'
 			border-collapse: separate;
@@ -454,7 +459,8 @@ class Main {
 				$this->responsi_dynamic_css();
 				wp_add_inline_style( 'login', $this->responsi_build_dynamic_css( true ) );
 			}else{
-				wp_add_inline_style( 'login', get_theme_mod( 'wp_login_page_custom_css' ) );
+				//wp_add_inline_style( 'login', get_theme_mod( 'wp_login_page_custom_css' ) );
+				wp_add_inline_style( 'login', $this->responsi_build_dynamic_css( true ) );
 			}
 			
 		}

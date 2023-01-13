@@ -1,5 +1,9 @@
 *** Responsi WP Login Page ***
 
+= 1.4.1 - 2023/01/13 =
+* The maintenance release adds style for the Wordfence 2FA code box.
+* Tweak - Apply CSS for the Wordfence 2FA form code entry.
+
 = 1.4.0 - 2022/03/29 =
 * This security hardening release follows a full PHPCS code audit with code refactoring and security hardening including additional escaping and sanitizing.
 * Security - Escape all $-variable
